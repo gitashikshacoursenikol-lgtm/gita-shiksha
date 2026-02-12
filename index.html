@@ -17,25 +17,6 @@ text-align:center;
 overflow-x:hidden;
 }
 
-/* Smoke Effect */
-body::after{
-content:"";
-position:fixed;
-width:200%;
-height:200%;
-background:url('https://i.imgur.com/8IhZzGk.png');
-background-size:cover;
-opacity:0.15;
-animation:smokeMove 60s linear infinite;
-pointer-events:none;
-z-index:0;
-}
-
-@keyframes smokeMove{
-from{transform:translate(0,0);}
-to{transform:translate(-300px,-300px);}
-}
-
 /* Krishna Image */
 .krishna{
 position:fixed;
@@ -48,46 +29,15 @@ pointer-events:none;
 z-index:1;
 }
 
-/* PREMIUM DARK CINEMATIC LOADER */
-#loader{
-position:fixed;
-width:100%;
-height:100%;
-background:black;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-z-index:9999;
-animation:fadeOut 2s ease 3s forwards;
-}
-
-#loader img{
-width:140px;
-animation:goldGlow 2s infinite alternate;
-}
-
-@keyframes fadeOut{
-to{opacity:0;visibility:hidden;}
-}
-
-/* Container */
 .container{
 padding:60px 20px;
 position:relative;
 z-index:2;
 }
 
-/* Logo */
 .logo{
 width:150px;
 margin-bottom:20px;
-animation:goldGlow 2s infinite alternate;
-}
-
-@keyframes goldGlow{
-from{filter:drop-shadow(0 0 10px gold);}
-to{filter:drop-shadow(0 0 30px gold);}
 }
 
 h1{
@@ -126,8 +76,8 @@ transition:0.3s;
 .share{background:#FF5722;color:white;}
 
 .btn:hover{
-transform:scale(1.07);
-box-shadow:0 0 20px gold;
+transform:scale(1.05);
+box-shadow:0 0 15px gold;
 }
 
 #countdown{
@@ -166,12 +116,6 @@ h1{font-size:30px;}
 
 <body>
 
-<!-- PREMIUM LOADER -->
-<div id="loader">
-<img src="https://i.ibb.co/FpWX7Gw/YOUTH-CENTRE-NIKOL-20260212-085339-0000.png">
-<h2 style="color:gold;margin-top:20px;">Entering Divine Experience...</h2>
-</div>
-
 <!-- Krishna Overlay -->
 <img src="https://i.imgur.com/Vz8YFZC.png" class="krishna">
 
@@ -191,40 +135,24 @@ h1{font-size:30px;}
 
 <div class="highlight">Limited Seats – Register Now</div>
 
-<a class="btn location" onclick="playBell()" href="https://maps.app.goo.gl/G2fTWAax8HgVvEhy7" target="_blank">View Location</a>
+<a class="btn location" href="https://maps.app.goo.gl/G2fTWAax8HgVvEhy7" target="_blank">View Location</a>
 
-<a class="btn whatsapp" onclick="playBell()" href="https://chat.whatsapp.com/Fg0glQ85C8UHuoYHHxmLHw?mode=gi_t" target="_blank">
-Join WhatsApp Group
-</a>
+<a class="btn whatsapp" href="https://chat.whatsapp.com/Fg0glQ85C8UHuoYHHxmLHw?mode=gi_t" target="_blank">Join WhatsApp Group</a>
 
-<a class="btn form" onclick="playBell()" href="https://docs.google.com/forms/d/1BbwaNA2cQ_rwfMyoKln95UoZu9aqwz6Vsh9ylUkD0as/viewform" target="_blank">
-Register Now
-</a>
+<a class="btn form" href="https://docs.google.com/forms/d/1BbwaNA2cQ_rwfMyoKln95UoZu9aqwz6Vsh9ylUkD0as/viewform" target="_blank">Register Now</a>
 
-<a class="btn share" onclick="playBell()" href="https://api.whatsapp.com/send?text=Join%20Gita%20Shiksha%20Course%20ISKCON%20Youth%20Centre" target="_blank">
-Share with Friends
-</a>
+<a class="btn share" href="https://api.whatsapp.com/send?text=Join%20Gita%20Shiksha%20Course%20ISKCON%20Youth%20Centre" target="_blank">Share with Friends</a>
 
 <footer>Hare Krishna | ISKCON Youth Centre Nikol</footer>
 
 </div>
 
 <div class="sticky-cta"
-onclick="playBell(); window.open('https://docs.google.com/forms/d/1BbwaNA2cQ_rwfMyoKln95UoZu9aqwz6Vsh9ylUkD0as/viewform','_blank')">
+onclick="window.open('https://docs.google.com/forms/d/1BbwaNA2cQ_rwfMyoKln95UoZu9aqwz6Vsh9ylUkD0as/viewform','_blank')">
 Register Now → Limited Seats
 </div>
 
-<!-- Temple Bell Sound -->
-<audio id="bell">
-<source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3" type="audio/mpeg">
-</audio>
-
 <script>
-// Bell sound
-function playBell(){
-document.getElementById("bell").play();
-}
-
 // Countdown
 var countDownDate = new Date("Feb 4, 2026 19:30:00").getTime();
 
@@ -249,3 +177,4 @@ document.getElementById("countdown").innerHTML =
 
 </body>
 </html>
+
